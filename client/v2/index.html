@@ -3,6 +3,38 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>🧱 Lego | Predictability of a lego set deal</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f4f4f9;
+      }
+      h1, h2 {
+          color: #333;
+      }
+      section {
+          margin: 20px;
+          padding: 20px;
+          background: white;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      select, button {
+          margin: 5px;
+      }
+      .deal {
+          padding: 10px;
+          border: 1px solid #ddd;
+          margin-bottom: 10px;
+      }
+      .active {
+          font-weight: bold;
+      }
+      .filters span {
+          cursor: pointer;
+          margin-right: 10px;
+      }
+    </style>
   </head>
   <body>
     <h1>Lego</h1>
@@ -19,7 +51,7 @@
         <label for="page-select">Go to page:</label>
         <select name="page" id="page-select"> </select>
       </div>
-      <div id="filters">
+      <div id="filters" class="filters">
         <span>By best discount</span>
         <span>By most commented</span>
         <span>By hot deals</span>
@@ -31,6 +63,7 @@
           <option value="price-desc">Expensive</option>
           <option value="date-asc">Recently published</option>
           <option value="date-desc">Anciently published</option>
+          <option value="favorites">Favorites</option>
         </select>
       </div>
     </section>
@@ -68,8 +101,12 @@
         <span>10 days</span>
       </div>
     </section>
-    <section id="deals"></section>
-    <script type="text/javascript" charset="UTF-8" src="utils.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="portfolio.js"></script>
-  </body>
+  <section id="deals"></section>
+  <section id="vinted-sales">
+    <h2>Vinted Sales</h2>
+    <ul id="vinted-sales-list"></ul>
+  </section>
+  <script type="text/javascript" charset="UTF-8" src="utils.js"></script>
+  <script type="text/javascript" charset="UTF-8" src="portfolio.js"></script>
+</body>
 </html>

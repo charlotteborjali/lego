@@ -1,21 +1,25 @@
-/* eslint-disable no-console, no-process-exit */
-const avenuedelabrique = require('./websites/avenuedelabrique');
+const dealabs = require('./websites/dealabs');  // Chemin correct vers dealabs.js
 
-async function sandbox (website = 'https://www.avenuedelabrique.com/nouveautes-lego') {
-  try {
-    console.log(`🕵️‍♀️  browsing ${website} website`);
+async function sandbox(website) {
+    try {
+        console.log(`Browsing ${website} website...`);
 
-    const deals = await avenuedelabrique.scrape(website);
+        let deals;
 
-    console.log(deals);
-    console.log('done');
-    process.exit(0);
-  } catch (e) {
-    console.error(e);
-    process.exit(1);
-  }
+        if (website.includes('dealabs')) {
+            deals = await dealabs.scrape(website);
+        } else {
+            throw new Error('Site non pris en charge.');
+        }
+        console.log(deals);
+        console.log('Done');
+        process.exit(0);
+    } catch (e) {
+        console.error('Erreur:', e);
+        process.exit(1);
+    }
 }
 
-const [,, eshop] = process.argv;
+const [, , eshop] = process.argv;
 
-sandbox(eshop);
+sandbox(eshop || 'https://www.dealabs.com/groupe/lego');

@@ -586,10 +586,7 @@ console.log('Profitability: ' + profitability.toFixed(2) + '%');
 // 🎯 LAST TODO: Save in localStorage
 // 1. Save MY_FAVORITE_DEALERS in the localStorage
 // 2. log the localStorage
-const MY_FAVORITE_DEALERS = [
-  { dealer: 'Vinted', item: 'LEGO 43230', price: 56.98, profit: profitability.toFixed(2) },
-  { dealer: 'eBay', item: 'LEGO 43230', price: 60.00, profit: '20%' }
-];
+
 
 // Sauvegarde de MY_FAVORITE_DEALERS dans localStorage
 localStorage.setItem('MY_FAVORITE_DEALERS', JSON.stringify(MY_FAVORITE_DEALERS));
