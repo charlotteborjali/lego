@@ -1,4 +1,5 @@
-const dealabs = require('./websites/dealabs');  // Chemin correct vers dealabs.js
+const dealabs = require('./websites/dealabs');  // Chemin correct vers 'dealabs.js' dans le dossier 'websites'
+
 
 async function sandbox(website) {
     try {
